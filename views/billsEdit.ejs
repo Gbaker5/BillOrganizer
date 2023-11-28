@@ -2,23 +2,26 @@
 <div class="container">
 
   <div>
-    <form action="">
+    <form action="/bills/billsEdit?_method=PUT" method="POST">
+      <div>
+        <h2>Month<input type="text" name="month"><%=month%></h2>
+      </div>
     <table>
     <tr>
       <th>Bill</th>
       <th>Price</th>
       <th>Date Due</th>
       <th>Date Paid</th>
-      <th>Extra Info</th>
       <th>Est. Balance Remaining</th>
+      <th>Extra Info</th>
     </tr>
     <tr>
       <td>Rent</td>
-      <td><input type="text">$1025</td>
+      <td><input type="text" name="rent" id="">$<%=rent[0]%></td>
       <td><input type="date" name="rent" id=""></td>
       <td><input type="date" name="rent" id=""></td>
-      <td><input type="text" name="rent" id=""></td>
-      <td><span>Paid on the first</span></td>
+      <td><input type="text" name="rent" id="">$<%=rent[3]%></td>
+      <td><input type="text" name="rent"><%=rent[4]%></td>
     </tr>
     <tr>
       <td>OGE</td>
@@ -123,6 +126,14 @@
       <td><input type="date" name="" id=""></td>
       <td><input type="text" name="" id=""></td>
       <td><span></span></td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     </table>
     <div>

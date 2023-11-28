@@ -20,31 +20,53 @@ module.exports = {
   },
   getBillsEdit: async (req, res) => {
     try {
+
+      const bills = await Bills.find(
+        {user: req.user.id })
+      //console.log(bills)
+
       
-      res.render("billsEdit.ejs", {  user: req.user });
+      const month = bills[0].Month
+      const rent = bills[0].Rent
+      //console.log(rent)
+      
+      
+      res.render("billsEdit.ejs", {  month: month, rent: rent, user: req.user });
     } catch (err) {
       console.log(err);
     }
   },
   putBillsEdit: async (req, res) => {
     try {
+      //console.log(req.user.id)
+      //console.log(req.body.rent[0])
+      //console.log(req.body.rent.length)
+
+      for(i=0;i<req.body.rent.length;i++){
+
       
+      if(req.body.rent[i] == ''){
+        console.log('empty field')
+      }else {
+
       await Bills.findOneAndUpdate(
-
-        {user:req.user.id},
-        {set: {
-          
-        }}
-
-
+        
+        {user: req.user.id},
+        { $set: {
+          Month: req.body.month,
+          Rent: req.body.rent
 
 
 
-      )
 
-
-      res.render("billsEdit.ejs", {  user: req.user });
-      console.log("updated Bills")
+        }
+        },
+        {upsert:true});
+      }
+    }
+        console.log("updated Bills")
+      res.redirect("/bills/billsEdit");
+      
     } catch (err) {
       console.log(err);
     }
