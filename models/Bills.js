@@ -9,55 +9,55 @@ const BillsSchema = new mongoose.Schema({
     
   },
   OGE: {
-    type: String,
+    type: Array,
     
   },
   Storage: {
-    type: String,
+    type: Array,
     
   },
   Phone: {
-    type: String,
+    type: Array,
     
   },
   Insurance: {
-    type: String,
+    type: Array,
     
   },
   Water:{
-    type: String,
+    type: Array,
     
   },
   Windstream: {
-    type: String,
+    type: Array,
     
   },
   Car: {
-    type: String,
+    type: Array,
     
   },
   USAA: {
-    type: String,
+    type: Array,
     
   },
   Academy: {
-    type: String,
+    type: Array,
     
   },
   CapitalOne: {
-    type: String,
+    type: Array,
     
   },
   Milestone: {
-    type: String,
+    type: Array,
     
   },
   Indigo: {
-    type: String,
+    type: Array,
     
   },
   Lowes: {
-    type: String,
+    type: Array,
     
   },
   user: {

@@ -28,10 +28,11 @@ module.exports = {
       
       const month = bills[0].Month
       const rent = bills[0].Rent
+      const oge = bills[0].OGE
       //console.log(rent)
       
       
-      res.render("billsEdit.ejs", {  month: month, rent: rent, user: req.user });
+      res.render("billsEdit.ejs", {  month: month, rent: rent, oge: oge, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -41,28 +42,122 @@ module.exports = {
       //console.log(req.user.id)
       //console.log(req.body.rent[0])
       //console.log(req.body.rent.length)
+      const updateFields = {};
+      const updateOGE = {};
 
-      for(i=0;i<req.body.rent.length;i++){
+     // Update Rent fields
+     for (let i = 0; i < req.body.rent.length; i++) {
+      if (req.body.rent[i] !== '') {
+        updateFields[`Rent.${i}`] = req.body.rent[i];
+      } else {
+        console.log(`Empty field for rent at index ${i}`);
+      }
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    // Update Storage fields
+    for (let j = 0; j < req.body.storage.length; j++) {
+      if (req.body.storage[j] !== '') {
+        updateFields[`Storage.${j}`] = req.body.storage[j];
+      } else {
+        console.log(`Empty field for Storage at index ${j}`);
+      } 
+    }
+
+    // Update Phone fields
+    for (let j = 0; j < req.body.phone.length; j++) {
+      if (req.body.phone[j] !== '') {
+        updateFields[`Phone.${j}`] = req.body.phone[j];
+      } else {
+        console.log(`Empty field for Phone at index ${j}`);
+      } 
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    // Update OGE fields
+    for (let j = 0; j < req.body.oge.length; j++) {
+      if (req.body.oge[j] !== '') {
+        updateFields[`OGE.${j}`] = req.body.oge[j];
+      } else {
+        console.log(`Empty field for OGE at index ${j}`);
+      } 
+    }
+
+    console.log(updateFields);
+    
+    
+     if(Object.keys(updateFields).length > 0){
 
       
-      if(req.body.rent[i] == ''){
-        console.log('empty field')
-      }else {
-
+      
       await Bills.findOneAndUpdate(
         
         {user: req.user.id},
         { $set: {
           Month: req.body.month,
-          Rent: req.body.rent
-
+          ...updateFields,
+          
+          //Storage: req.body.storage,
+          //Insurance: req.body.insurance,
 
 
 
         }
         },
         {upsert:true});
-      }
+      
     }
         console.log("updated Bills")
       res.redirect("/bills/billsEdit");
