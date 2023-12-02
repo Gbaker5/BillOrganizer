@@ -99,7 +99,15 @@ module.exports = {
       //console.log(req.body.rent[0])
       //console.log(req.body.rent.length)
       const updateFields = {};
-      
+
+      // Update Month field
+     
+      if (req.body.month !== '') {
+        updateFields[`Month`] = req.body.month;
+      } else {
+        console.log(`Empty field for Month`);
+      }
+    
 
      // Update Rent fields
      for (let a = 0; a < req.body.rent.length; a++) {
