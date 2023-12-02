@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<bills.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5 layoutbox">
+            <a href="/bills/billsEdit/<%=bills[i]._id%>"> 
+            <p>Rent: <%=bills[i].Rent%></p>
+            <p>OGE: <%=bills[i].OGE%></p>
+            <p>Storage: <%=bills[i].Storage%></p>
+            <p>Phone: <%=bills[i].Phone%></p>
+            <p>Insurance <%=bills[i].Insurance%></p>
+            <p>Water: <%=bills[i].Water%></p>
+            <p>Windstream: <%=bills[i].Windstream%></p>
+            <p>Car: <%=bills[i].Car%></p>
+            <p>Usaa: <%=bills[i].USAA%></p>
+            <p>Academy: <%=bills[i].Academy%></p>
+            <p>CapitalOne: <%=bills[i].CapitalOne%></p>
+            <p>Milestone: <%=bills[i].Milestone%></p>
+            <p>Indigo: <%=bills[i].Indigo%></p>
+            <p>Lowes: <%=bills[i].Lowes%></p>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

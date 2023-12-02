@@ -6,10 +6,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
 router.get("/allBills", ensureAuth, billsController.getBills);
-router.get("/billsEdit", ensureAuth, billsController.getBillsEdit);
-router.put("/billsEdit", ensureAuth, billsController.putBillsEdit)
+router.get("/billsEdit/:id", ensureAuth, billsController.getBillsEdit);
+router.put("/billsEdit/:id", ensureAuth, billsController.putBillsEdit)
 router.get("/billsList", ensureAuth, billsController.getBillsList);
-
+router.post("/billsCreate", ensureAuth, billsController.postBillsCreate);
+router.get("/billsLayout", ensureAuth, billsController.getBillsLayout)
 
 
 module.exports = router;

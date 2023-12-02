@@ -2,7 +2,7 @@
 <div class="container">
 
   <div>
-    <form action="/bills/billsEdit?_method=PUT" method="POST">
+    <form action="/bills/billsEdit/<%=id%>?_method=PUT" method="POST">
       <div>
         <h2>Month<input type="text" name="month"><%=month%></h2>
       </div>
@@ -17,115 +17,115 @@
     </tr>
     <tr>
       <td>Rent</td>
-      <td><input type="text" name="rent" id="">$<%=rent[0]%></td>
-      <td><input type="date" name="rent" id=""></td>
-      <td><input type="date" name="rent" id=""></td>
-      <td><input type="text" name="rent" id="">$<%=rent[3]%></td>
-      <td><input type="text" name="rent"><%=rent[4]%></td>
+      <td><input type="text" name="rent" id="">$<%= rent ? rent[0] : '' %></td>
+      <td><input type="date" name="rent" id=""><%= rent ? rent[1] : '' %></td>
+      <td><input type="date" name="rent" id=""><%= rent ? rent[2] : '' %></td>
+      <td><input type="text" name="rent" id="">$<%= rent ? rent[3] : '' %></td>
+      <td><input type="text" name="rent" id=""><%= rent ? rent[4] : '' %></td>
     </tr>
     <tr>
       <td>OGE</td>
-      <td><input type="text" name="oge" id="">$<%=oge[0]%></td>
-      <td><input type="date" name="oge" id=""></td>
-      <td><input type="date" name="oge" id=""></td>
-      <td><input type="text" name="oge" id="">$<%=oge[3]%></td>
-      <td><input type="text" name="rent"><%=oge[4]%></td>
+      <td><input type="text" name="oge" id="">$<%= oge ? oge[0] : '' %></td>
+      <td><input type="date" name="oge" id=""><%= oge ? oge[1] : '' %></td>
+      <td><input type="date" name="oge" id=""><%= oge ? oge[2] : '' %></td>
+      <td><input type="text" name="oge" id="">$<%= oge ? oge[3] : '' %></td>
+      <td><input type="text" name="oge" id=""><%= oge ? oge[4] : '' %></td>
     </tr>
     <tr>
       <td>Storage</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="storage" id=""></td>
-      <td><input type="date" name="storage" id=""></td>
-      <td><input type="text" name="storage" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="storage" id="">$<%= storage ? storage[0] : '' %></td>
+      <td><input type="date" name="storage" id=""><%= storage ? storage[1] : '' %></td>
+      <td><input type="date" name="storage" id=""><%= storage ? storage[2] : '' %></td>
+      <td><input type="text" name="storage" id="">$<%= storage ? storage[3] : '' %></td>
+      <td><input type="text" name="storage" id=""><%= storage ? storage[4] : '' %></td>
     </tr>
     <tr>
       <td>Phone</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="phone" id="">$<%= phone ? phone[0] : '' %></td>
+      <td><input type="date" name="phone" id=""><%= phone ? phone[1] : '' %></td>
+      <td><input type="date" name="phone" id=""><%= phone ? phone[2] : '' %></td>
+      <td><input type="text" name="phone" id="">$<%= phone ? phone[3] : '' %></td>
+      <td><input type="text" name="phone" id=""><%= phone ? phone[4] : '' %></td>
     </tr>
     <tr>
       <td>Insurance</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="insurance" id="">$<%= insurance ? insurance[0] : '' %></td>
+      <td><input type="date" name="insurance" id=""><%= insurance ? insurance[1] : '' %></td>
+      <td><input type="date" name="insurance" id=""><%= insurance ? insurance[2] : '' %></td>
+      <td><input type="text" name="insurance" id="">$<%= insurance ? insurance[3] : '' %></td>
+      <td><input type="text" name="insurance" id=""><%= insurance ? insurance[4] : '' %></td>
     </tr>
     <tr>
       <td>Water</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="water" id="">$<%= water ? water[0] : '' %></td>
+      <td><input type="date" name="water" id=""><%= water ? water[1] : '' %></td>
+      <td><input type="date" name="water" id=""><%= water ? water[2] : '' %></td>
+      <td><input type="text" name="water" id="">$<%= water? water[3] : '' %></td>
+      <td><input type="text" name="water" id=""><%= water ? water[4] : '' %></td>
     </tr>
     <tr>
       <td>Windstream</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="windstream" id="">$<%= windstream ? windstream[0] : '' %></td>
+      <td><input type="date" name="windstream" id=""><%= windstream ? windstream[1] : '' %></td>
+      <td><input type="date" name="windstream" id=""><%= windstream ? windstream[2] : '' %></td>
+      <td><input type="text" name="windstream" id="">$<%= windstream ? windstream[3] : '' %></td>
+      <td><input type="text" name="windstream" id=""><%= windstream ? windstream[4] : '' %></td>
     </tr>
     <tr>
       <td>Car</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="car" id="">$<%= car ? car[0] : '' %></td>
+      <td><input type="date" name="car" id=""><%= car ? car[1] : '' %></td>
+      <td><input type="date" name="car" id=""><%= car ? car[2] : '' %></td>
+      <td><input type="text" name="car" id="">$<%= car ? car[3] : '' %></td>
+      <td><input type="text" name="car" id=""><%= car ? car[4] : '' %></td>
     </tr>
     <tr>
       <td>USAA</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="usaa" id="">$<%= usaa ? usaa[0] : '' %></td>
+      <td><input type="date" name="usaa" id=""><%= usaa ? usaa[1] : '' %></td>
+      <td><input type="date" name="usaa" id=""><%= usaa ? usaa[2] : '' %></td>
+      <td><input type="text" name="usaa" id="">$<%= usaa ? usaa[3] : '' %></td>
+      <td><input type="text" name="usaa" id=""><%= usaa ? usaa[4] : '' %></td>
     </tr>
     <tr>
       <td>Academy</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="academy" id="">$<%= academy ? academy[0] : '' %></td>
+      <td><input type="date" name="academy" id=""><%= academy ? academy[1] : '' %></td>
+      <td><input type="date" name="academy" id=""><%= academy ? academy[2] : '' %></td>
+      <td><input type="text" name="academy" id="">$<%= academy ? academy[3] : '' %></td>
+      <td><input type="text" name="academy" id=""><%= academy ? academy[4] : '' %></td>
     </tr>
     <tr>
       <td>Capital One</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="capitalOne" id="">$<%= capitalOne ? capitalOne[0] : '' %></td>
+      <td><input type="date" name="capitalOne" id=""><%= capitalOne ? capitalOne[1] : '' %></td>
+      <td><input type="date" name="capitalOne" id=""><%= capitalOne ? capitalOne[2] : '' %></td>
+      <td><input type="text" name="capitalOne" id="">$<%= capitalOne ? capitalOne[3] : '' %></td>
+      <td><input type="text" name="capitalOne" id=""><%= capitalOne ? capitalOne[4] : '' %></td>
     </tr>
     <tr>
       <td>Milestone</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="milestone" id="">$<%= milestone ? milestone[0] : '' %></td>
+      <td><input type="date" name="milestone" id=""><%= milestone ? milestone[1] : '' %></td>
+      <td><input type="date" name="milestone" id=""><%= milestone ? milestone[2] : '' %></td>
+      <td><input type="text" name="milestone" id="">$<%= milestone ? milestone[3] : '' %></td>
+      <td><input type="text" name="milestone" id=""><%= milestone ? milestone[4] : '' %></td>
     </tr>
     <tr>
       <td>Indigo</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="indigo" id="">$<%= indigo ? indigo[0] : '' %></td>
+      <td><input type="date" name="indigo" id=""><%= indigo ? indigo[1] : '' %></td>
+      <td><input type="date" name="indigo" id=""><%= indigo ? indigo[2] : '' %></td>
+      <td><input type="text" name="indigo" id="">$<%= indigo ? indigo[3] : '' %></td>
+      <td><input type="text" name="indigo" id=""><%= indigo ? indigo[4] : '' %></td>
     </tr>
     <tr>
       <td>Lowes</td>
-      <td><input type="text">$1025</td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="date" name="" id=""></td>
-      <td><input type="text" name="" id=""></td>
-      <td><span></span></td>
+      <td><input type="text" name="lowes" id="">$<%= lowes ? lowes[0] : '' %></td>
+      <td><input type="date" name="lowes" id=""><%= lowes ? lowes[1] : '' %></td>
+      <td><input type="date" name="lowes" id=""><%= lowes ? lowes[2] : '' %></td>
+      <td><input type="text" name="lowes" id="">$<%= lowes ? lowes[3] : '' %></td>
+      <td><input type="text" name="lowes" id=""><%= lowes ? lowes[4] : '' %></td>
     </tr>
     <tr>
       <td><strong>Total</strong></td>

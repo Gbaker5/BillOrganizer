@@ -59,6 +59,7 @@ const BillsSchema = new mongoose.Schema({
   Lowes: {
     type: Array,
     
+    
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
