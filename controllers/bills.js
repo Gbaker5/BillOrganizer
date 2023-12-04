@@ -13,8 +13,11 @@ module.exports = {
   },
   getBills: async (req, res) => {
     try {
+      const bills = await Bills.find({user: req.user.id})
+      console.log(bills)
+
       
-      res.render("bills.ejs", {  user: req.user });
+      res.render("bills.ejs", {user: req.user, bills: bills });
     } catch (err) {
       console.log(err);
     }
@@ -265,6 +268,38 @@ module.exports = {
       res.redirect(`/bills/billsEdit/${req.params.id}`);
       
     } catch (err) {
+      console.log(err);
+    }
+  },
+  putMarkComplete: async (req,res) => {
+    try{
+
+      const update = `${itemFromJS}.5`
+      console.log(update)
+      //to be put on edit page
+      await Bills.findOneAndUpdate(
+        {_id:req.params.id},
+        {$Set: {
+          
+        }})
+        .then(result =>{
+          res.json('marked complete')
+          console.log("marked")
+        })
+
+      
+      res.redirect(`bills/billsEdit/${req.params.id}`)
+    }catch (err) {
+      console.log(err);
+    }
+  },
+  putMarkUncomplete: async (req,res) => {
+    try{
+
+
+      
+      res.redirect(`bills/billsEdit/${req.params.id}`)
+    }catch (err) {
       console.log(err);
     }
   },

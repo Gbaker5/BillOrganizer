@@ -5,6 +5,7 @@
         <% for(var i=0; i<bills.length; i++) {%>
           <li class="col-6 justify-content-between mt-5 layoutbox">
             <a href="/bills/billsEdit/<%=bills[i]._id%>"> 
+            <p>Month: <%=bills[i].Month%></p>
             <p>Rent: <%=bills[i].Rent%></p>
             <p>OGE: <%=bills[i].OGE%></p>
             <p>Storage: <%=bills[i].Storage%></p>

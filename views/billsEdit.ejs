@@ -4,130 +4,298 @@
   <div>
     <form action="/bills/billsEdit/<%=id%>?_method=PUT" method="POST">
       <div>
-        <h2>Month<input type="text" name="month"><%=month%></h2>
+        <h2>Month<input type="text" name="month" id=""><%=month%></h2>
       </div>
     <table>
     <tr>
+      <th></th>
       <th>Bill</th>
       <th>Price</th>
       <th>Date Due</th>
+      <!--<th>Amount Paid</th>-->
       <th>Date Paid</th>
       <th>Est. Balance Remaining</th>
       <th>Extra Info</th>
     </tr>
     <tr>
-      <td>Rent</td>
-      <td><input type="text" name="rent" id="">$<%= rent ? rent[0] : '' %></td>
-      <td><input type="date" name="rent" id=""><%= rent ? rent[1] : '' %></td>
-      <td><input type="date" name="rent" id=""><%= rent ? rent[2] : '' %></td>
-      <td><input type="text" name="rent" id="">$<%= rent ? rent[3] : '' %></td>
-      <td><input type="text" name="rent" id=""><%= rent ? rent[4] : '' %></td>
+      <td><input type="checkbox" name="rentcheck" class="billCheck"></td>
+
+      <td class="billCheck">Rent</td>
+
+      <td><input type="text" name="rent" id="">
+        <p>$<%= rent ? rent[0] : '' %></p>
+      </td>
+
+      <td><input type="date" name="rent" id="">
+        <p><%= rent ? rent[1] : '' %></p>
+      </td>
+
+      <td><input type="date" name="rent" id="">
+        <p><%= rent ? rent[2] : '' %></p>
+      </td>
+
+      <td><input type="text" name="rent" id="">
+        <p>$<%= rent ? rent[3] : '' %></p>
+      </td>
+
+      <td><input type="text" name="rent" id="">
+        <p><%= rent ? rent[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="ogecheck" class="billCheck"></td>
       <td>OGE</td>
-      <td><input type="text" name="oge" id="">$<%= oge ? oge[0] : '' %></td>
-      <td><input type="date" name="oge" id=""><%= oge ? oge[1] : '' %></td>
-      <td><input type="date" name="oge" id=""><%= oge ? oge[2] : '' %></td>
-      <td><input type="text" name="oge" id="">$<%= oge ? oge[3] : '' %></td>
-      <td><input type="text" name="oge" id=""><%= oge ? oge[4] : '' %></td>
+      <td><input type="text" name="oge" id="">
+        <p>$<%= oge ? oge[0] : '' %></p>
+      </td>
+      <td><input type="date" name="oge" id="">
+        <p><%= oge ? oge[1] : '' %></p>
+      </td>
+      <td><input type="date" name="oge" id="">
+        <p><%= oge ? oge[2] : '' %></p>
+      </td>
+      <td><input type="text" name="oge" id="">
+        <p>$<%= oge ? oge[3] : '' %></p>
+      </td>
+      <td><input type="text" name="oge" id="">
+        <p><%= oge ? oge[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="storagecheck" class="billCheck"></td>
       <td>Storage</td>
-      <td><input type="text" name="storage" id="">$<%= storage ? storage[0] : '' %></td>
-      <td><input type="date" name="storage" id=""><%= storage ? storage[1] : '' %></td>
-      <td><input type="date" name="storage" id=""><%= storage ? storage[2] : '' %></td>
-      <td><input type="text" name="storage" id="">$<%= storage ? storage[3] : '' %></td>
-      <td><input type="text" name="storage" id=""><%= storage ? storage[4] : '' %></td>
+      <td><input type="text" name="storage" id="">
+        <p>
+        $<%= storage ? storage[0] : '' %></p>
+      </td>
+      <td><input type="date" name="storage" id="">
+        <p>
+        <%= storage ? storage[1] : '' %></p>
+      </td>
+      <td><input type="date" name="storage" id="">
+        <p>
+        <%= storage ? storage[2] : '' %></p>
+      </td>
+      <td><input type="text" name="storage" id="">
+        <p>
+        $<%= storage ? storage[3] : '' %></p>
+      </td>
+      <td><input type="text" name="storage" id="">
+        <p>
+        <%= storage ? storage[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="phonecheck" class="billCheck"></td>
       <td>Phone</td>
-      <td><input type="text" name="phone" id="">$<%= phone ? phone[0] : '' %></td>
-      <td><input type="date" name="phone" id=""><%= phone ? phone[1] : '' %></td>
-      <td><input type="date" name="phone" id=""><%= phone ? phone[2] : '' %></td>
-      <td><input type="text" name="phone" id="">$<%= phone ? phone[3] : '' %></td>
-      <td><input type="text" name="phone" id=""><%= phone ? phone[4] : '' %></td>
+      <td><input type="text" name="phone" id="">
+        <p>$<%= phone ? phone[0] : '' %></p>
+      </td>
+      <td><input type="date" name="phone" id="">
+        <p><%= phone ? phone[1] : '' %></p>
+      </td>
+      <td><input type="date" name="phone" id="">
+        <p><%= phone ? phone[2] : '' %></p>
+      </td>
+      <td><input type="text" name="phone" id="">
+        <p>$<%= phone ? phone[3] : '' %></p>
+      </td>
+      <td><input type="text" name="phone" id="">
+        <p><%= phone ? phone[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="insurancecheck" class="billCheck"></td>
       <td>Insurance</td>
-      <td><input type="text" name="insurance" id="">$<%= insurance ? insurance[0] : '' %></td>
-      <td><input type="date" name="insurance" id=""><%= insurance ? insurance[1] : '' %></td>
-      <td><input type="date" name="insurance" id=""><%= insurance ? insurance[2] : '' %></td>
-      <td><input type="text" name="insurance" id="">$<%= insurance ? insurance[3] : '' %></td>
-      <td><input type="text" name="insurance" id=""><%= insurance ? insurance[4] : '' %></td>
+      <td><input type="text" name="insurance" id="">
+        <p>$<%= insurance ? insurance[0] : '' %></p>
+      </td>
+      <td><input type="date" name="insurance" id="">
+        <p><%= insurance ? insurance[1] : '' %></p>
+      </td>
+      <td><input type="date" name="insurance" id="">
+        <p><%= insurance ? insurance[2] : '' %></p>
+      </td>
+      <td><input type="text" name="insurance" id="">
+        <p>$<%= insurance ? insurance[3] : '' %></p>
+      </td>
+      <td><input type="text" name="insurance" id="">
+        <p><%= insurance ? insurance[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="watercheck" class="billCheck"></td>
       <td>Water</td>
-      <td><input type="text" name="water" id="">$<%= water ? water[0] : '' %></td>
-      <td><input type="date" name="water" id=""><%= water ? water[1] : '' %></td>
-      <td><input type="date" name="water" id=""><%= water ? water[2] : '' %></td>
-      <td><input type="text" name="water" id="">$<%= water? water[3] : '' %></td>
-      <td><input type="text" name="water" id=""><%= water ? water[4] : '' %></td>
+      <td><input type="text" name="water" id="">
+        <p>$<%= water ? water[0] : '' %></p>
+      </td>
+      <td><input type="date" name="water" id="">
+        <p><%= water ? water[1] : '' %></p>
+      </td>
+      <td><input type="date" name="water" id="">
+        <p><%= water ? water[2] : '' %></p>
+      </td>
+      <td><input type="text" name="water" id="">
+        <p>$<%= water? water[3] : '' %></p>
+      </td>
+      <td><input type="text" name="water" id="">
+        <p><%= water ? water[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="windstreamcheck" class="billCheck"></td>
       <td>Windstream</td>
-      <td><input type="text" name="windstream" id="">$<%= windstream ? windstream[0] : '' %></td>
-      <td><input type="date" name="windstream" id=""><%= windstream ? windstream[1] : '' %></td>
-      <td><input type="date" name="windstream" id=""><%= windstream ? windstream[2] : '' %></td>
-      <td><input type="text" name="windstream" id="">$<%= windstream ? windstream[3] : '' %></td>
-      <td><input type="text" name="windstream" id=""><%= windstream ? windstream[4] : '' %></td>
+      <td><input type="text" name="windstream" id="">
+        <p>$<%= windstream ? windstream[0] : '' %></p>
+      </td>
+      <td><input type="date" name="windstream" id="">
+        <p><%= windstream ? windstream[1] : '' %></p>
+      </td>
+      <td><input type="date" name="windstream" id="">
+        <p><%= windstream ? windstream[2] : '' %></p>
+      </td>
+      <td><input type="text" name="windstream" id="">
+        <p>$<%= windstream ? windstream[3] : '' %></p>
+      </td>
+      <td><input type="text" name="windstream" id="">
+        <p><%= windstream ? windstream[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="carcheck" class="billCheck"></td>
       <td>Car</td>
-      <td><input type="text" name="car" id="">$<%= car ? car[0] : '' %></td>
-      <td><input type="date" name="car" id=""><%= car ? car[1] : '' %></td>
-      <td><input type="date" name="car" id=""><%= car ? car[2] : '' %></td>
-      <td><input type="text" name="car" id="">$<%= car ? car[3] : '' %></td>
-      <td><input type="text" name="car" id=""><%= car ? car[4] : '' %></td>
+      <td><input type="text" name="car" id="">
+        <p>$<%= car ? car[0] : '' %></p>
+      </td>
+      <td><input type="date" name="car" id="">
+        <p><%= car ? car[1] : '' %></p>
+      </td>
+      <td><input type="date" name="car" id="">
+        <p><%= car ? car[2] : '' %></p>
+      </td>
+      <td><input type="text" name="car" id="">
+        <p>$<%= car ? car[3] : '' %></p>
+      </td>
+      <td><input type="text" name="car" id="">
+        <p><%= car ? car[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="usaacheck" class="billCheck"></td>
       <td>USAA</td>
-      <td><input type="text" name="usaa" id="">$<%= usaa ? usaa[0] : '' %></td>
-      <td><input type="date" name="usaa" id=""><%= usaa ? usaa[1] : '' %></td>
-      <td><input type="date" name="usaa" id=""><%= usaa ? usaa[2] : '' %></td>
-      <td><input type="text" name="usaa" id="">$<%= usaa ? usaa[3] : '' %></td>
-      <td><input type="text" name="usaa" id=""><%= usaa ? usaa[4] : '' %></td>
+      <td><input type="text" name="usaa" id="">
+        <p>$<%= usaa ? usaa[0] : '' %></p>
+      </td>
+      <td><input type="date" name="usaa" id="">
+        <p><%= usaa ? usaa[1] : '' %></p>
+      </td>
+      <td><input type="date" name="usaa" id="">
+        <p><%= usaa ? usaa[2] : '' %></p>
+      </td>
+      <td><input type="text" name="usaa" id="">
+        <p>$<%= usaa ? usaa[3] : '' %></p>
+      </td>
+      <td><input type="text" name="usaa" id="">
+        <p><%= usaa ? usaa[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="academycheck" class="billCheck"></td>
       <td>Academy</td>
-      <td><input type="text" name="academy" id="">$<%= academy ? academy[0] : '' %></td>
-      <td><input type="date" name="academy" id=""><%= academy ? academy[1] : '' %></td>
-      <td><input type="date" name="academy" id=""><%= academy ? academy[2] : '' %></td>
-      <td><input type="text" name="academy" id="">$<%= academy ? academy[3] : '' %></td>
-      <td><input type="text" name="academy" id=""><%= academy ? academy[4] : '' %></td>
+      <td><input type="text" name="academy" id="">
+        <p>$<%= academy ? academy[0] : '' %></p>
+      </td>
+      <td><input type="date" name="academy" id="">
+        <p><%= academy ? academy[1] : '' %></p>
+      </td>
+      <td><input type="date" name="academy" id="">
+        <p><%= academy ? academy[2] : '' %></p>
+      </td>
+      <td><input type="text" name="academy" id="">
+        <p>$<%= academy ? academy[3] : '' %></p>
+      </td>
+      <td><input type="text" name="academy" id="">
+        <p><%= academy ? academy[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="capitalonecheck" class="billCheck"></td>
       <td>Capital One</td>
-      <td><input type="text" name="capitalOne" id="">$<%= capitalOne ? capitalOne[0] : '' %></td>
-      <td><input type="date" name="capitalOne" id=""><%= capitalOne ? capitalOne[1] : '' %></td>
-      <td><input type="date" name="capitalOne" id=""><%= capitalOne ? capitalOne[2] : '' %></td>
-      <td><input type="text" name="capitalOne" id="">$<%= capitalOne ? capitalOne[3] : '' %></td>
-      <td><input type="text" name="capitalOne" id=""><%= capitalOne ? capitalOne[4] : '' %></td>
+      <td><input type="text" name="capitalOne" id="">
+        <p>$<%= capitalOne ? capitalOne[0] : '' %></p>
+      </td>
+      <td><input type="date" name="capitalOne" id="">
+        <p><%= capitalOne ? capitalOne[1] : '' %></p>
+      </td>
+      <td><input type="date" name="capitalOne" id="">
+        <p><%= capitalOne ? capitalOne[2] : '' %></p>
+      </td>
+      <td><input type="text" name="capitalOne" id="">
+        <p>$<%= capitalOne ? capitalOne[3] : '' %></p>
+      </td>
+      <td><input type="text" name="capitalOne" id="">
+        <p><%= capitalOne ? capitalOne[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="milestonecheck" class="billCheck"></td>
       <td>Milestone</td>
-      <td><input type="text" name="milestone" id="">$<%= milestone ? milestone[0] : '' %></td>
-      <td><input type="date" name="milestone" id=""><%= milestone ? milestone[1] : '' %></td>
-      <td><input type="date" name="milestone" id=""><%= milestone ? milestone[2] : '' %></td>
-      <td><input type="text" name="milestone" id="">$<%= milestone ? milestone[3] : '' %></td>
-      <td><input type="text" name="milestone" id=""><%= milestone ? milestone[4] : '' %></td>
+      <td><input type="text" name="milestone" id="">
+        <p>$<%= milestone ? milestone[0] : '' %></p>
+      </td>
+      <td><input type="date" name="milestone" id="">
+        <p><%= milestone ? milestone[1] : '' %></p>
+      </td>
+      <td><input type="date" name="milestone" id="">
+        <p><%= milestone ? milestone[2] : '' %></p>
+      </td>
+      <td><input type="text" name="milestone" id="">
+        <p>$<%= milestone ? milestone[3] : '' %></p>
+      </td>
+      <td><input type="text" name="milestone" id="">
+        <p><%= milestone ? milestone[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="indigocheck" class="billCheck"></td>
       <td>Indigo</td>
-      <td><input type="text" name="indigo" id="">$<%= indigo ? indigo[0] : '' %></td>
-      <td><input type="date" name="indigo" id=""><%= indigo ? indigo[1] : '' %></td>
-      <td><input type="date" name="indigo" id=""><%= indigo ? indigo[2] : '' %></td>
-      <td><input type="text" name="indigo" id="">$<%= indigo ? indigo[3] : '' %></td>
-      <td><input type="text" name="indigo" id=""><%= indigo ? indigo[4] : '' %></td>
+      <td><input type="text" name="indigo" id="">
+        <p>$<%= indigo ? indigo[0] : '' %></p>
+      </td>
+      <td><input type="date" name="indigo" id="">
+        <p><%= indigo ? indigo[1] : '' %></p>
+      </td>
+      <td><input type="date" name="indigo" id="">
+        <p><%= indigo ? indigo[2] : '' %></p>
+      </td>
+      <td><input type="text" name="indigo" id="">
+        <p>$<%= indigo ? indigo[3] : '' %></p>
+      </td>
+      <td><input type="text" name="indigo" id="">
+        <p><%= indigo ? indigo[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td><input type="checkbox" name="lowescheck" class="billCheck"></td>
       <td>Lowes</td>
-      <td><input type="text" name="lowes" id="">$<%= lowes ? lowes[0] : '' %></td>
-      <td><input type="date" name="lowes" id=""><%= lowes ? lowes[1] : '' %></td>
-      <td><input type="date" name="lowes" id=""><%= lowes ? lowes[2] : '' %></td>
-      <td><input type="text" name="lowes" id="">$<%= lowes ? lowes[3] : '' %></td>
-      <td><input type="text" name="lowes" id=""><%= lowes ? lowes[4] : '' %></td>
+      <td><input type="text" name="lowes" id="">
+        <p>$<%= lowes ? lowes[0] : '' %></p>
+      </td>
+      <td><input type="date" name="lowes" id="">
+        <p><%= lowes ? lowes[1] : '' %></p>
+      </td>
+      <td><input type="date" name="lowes" id="">
+        <p><%= lowes ? lowes[2] : '' %></p>
+      </td>
+      <td><input type="text" name="lowes" id="">
+        <p>$<%= lowes ? lowes[3] : '' %></p>
+      </td>
+      <td><input type="text" name="lowes" id="">
+        <p><%= lowes ? lowes[4] : '' %></p>
+      </td>
     </tr>
     <tr>
+      <td></td>
       <td><strong>Total</strong></td>
       <td></td>
       <td></td>

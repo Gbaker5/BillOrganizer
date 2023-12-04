@@ -1,7 +1,16 @@
 <%- include('partials/header') -%>
 <div class="container">
+
+<%if(bills.length < 1){%>
+  <div>
+    <h2>You Do Not Have Any Bills Yet</h2>
+  </div>
+<%}else{%>
+
+
+  <% for(var i=0; i<bills.length; i++) {%>
     <div>
-        <h2></h2>
+        <h2><%=bills[i].Month%></h2>
     </div>
 
     <div>
@@ -16,121 +25,121 @@
         </tr>
         <tr>
           <td>Rent</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>$<%=bills[i].Rent[0]%></td>
+          <td><%=bills[i].Rent[1]%></td>
+          <td><%=bills[i].Rent[2]%></td>
+          <td>$<%=bills[i].Rent[3]%></td>
+          <td>"<%=bills[i].Rent[4]%>"</td>
         </tr>
         <tr>
           <td>OGE</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td>$<%=bills[i].OGE[0]%></td>
+          <td><%=bills[i].OGE[1]%></td>
+          <td><%=bills[i].OGE[2]%></td>
+          <td>$<%=bills[i].OGE[3]%></td>
+          <td>"<%=bills[i].OGE[4]%>"</td>
         </tr>
         <tr>
           <td>Storage</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Storage[0]%></td>
+          <td><%=bills[i].Storage[1]%></td>
+          <td><%=bills[i].Storage[2]%></td>
+          <td><%=bills[i].Storage[3]%></td>
+          <td><%=bills[i].Storage[4]%></td>
         </tr>
         <tr>
           <td>Phone</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Phone[0]%></td>
+          <td><%=bills[i].Phone[1]%></td>
+          <td><%=bills[i].Phone[2]%></td>
+          <td><%=bills[i].Phone[3]%></td>
+          <td><%=bills[i].Phone[4]%></td>
         </tr>
         <tr>
           <td>Insurance</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Insurance[0]%></td>
+          <td><%=bills[i].Insurance[1]%></td>
+          <td><%=bills[i].Insurance[2]%></td>
+          <td><%=bills[i].Insurance[3]%></td>
+          <td><%=bills[i].Insurance[4]%></td>
         </tr>
         <tr>
           <td>Water</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Water[0]%></td>
+          <td><%=bills[i].Water[1]%></td>
+          <td><%=bills[i].Water[2]%></td>
+          <td><%=bills[i].Water[3]%></td>
+          <td><%=bills[i].Water[4]%></td>
         </tr>
         <tr>
           <td>Windstream</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Windstream[0]%></td>
+          <td><%=bills[i].Windstream[1]%></td>
+          <td><%=bills[i].Windstream[2]%></td>
+          <td><%=bills[i].Windstream[3]%></td>
+          <td><%=bills[i].Windstream[4]%></td>
         </tr>
         <tr>
           <td>Car</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Car[0]%></td>
+          <td><%=bills[i].Car[1]%></td>
+          <td><%=bills[i].Car[2]%></td>
+          <td><%=bills[i].Car[3]%></td>
+          <td><%=bills[i].Car[4]%></td>
         </tr>
         <tr>
           <td>USAA</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].USAA[0]%></td>
+          <td><%=bills[i].USAA[1]%></td>
+          <td><%=bills[i].USAA[2]%></td>
+          <td><%=bills[i].USAA[3]%></td>
+          <td><%=bills[i].USAA[4]%></td>
         </tr>
         <tr>
           <td>Academy</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Academy[0]%></td>
+          <td><%=bills[i].Academy[1]%></td>
+          <td><%=bills[i].Academy[2]%></td>
+          <td><%=bills[i].Academy[3]%></td>
+          <td><%=bills[i].Academy[4]%></td>
         </tr>
         <tr>
           <td>Capital One</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].CapitalOne[0]%></td>
+          <td><%=bills[i].CapitalOne[1]%></td>
+          <td><%=bills[i].CapitalOne[2]%></td>
+          <td><%=bills[i].CapitalOne[3]%></td>
+          <td><%=bills[i].CapitalOne[4]%></td>
         </tr>
         <tr>
           <td>Milestone</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Milestone[0]%></td>
+          <td><%=bills[i].Milestone[1]%></td>
+          <td><%=bills[i].Milestone[2]%></td>
+          <td><%=bills[i].Milestone[3]%></td>
+          <td><%=bills[i].Milestone[4]%></td>
         </tr>
         <tr>
           <td>Indigo</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Indigo[0]%></td>
+          <td><%=bills[i].Indigo[1]%></td>
+          <td><%=bills[i].Indigo[2]%></td>
+          <td><%=bills[i].Indigo[3]%></td>
+          <td><%=bills[i].Indigo[4]%></td>
         </tr>
         <tr>
           <td>Lowes</td>
-          <td><input type="text">$1025</td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="date" name="" id=""></td>
-          <td><input type="text" name="" id=""></td>
-          <td><span></span></td>
+          <td><%=bills[i].Lowes[0]%></td>
+          <td><%=bills[i].Lowes[1]%></td>
+          <td><%=bills[i].Lowes[2]%></td>
+          <td><%=bills[i].Lowes[3]%></td>
+          <td><%=bills[i].Lowes[4]%></td>
         </tr>
         </table>
     
       </div>
 
 
-
-
+      <% } %>
+   <% } %>
 </div>

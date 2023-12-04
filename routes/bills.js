@@ -11,6 +11,6 @@ router.put("/billsEdit/:id", ensureAuth, billsController.putBillsEdit)
 router.get("/billsList", ensureAuth, billsController.getBillsList);
 router.post("/billsCreate", ensureAuth, billsController.postBillsCreate);
 router.get("/billsLayout", ensureAuth, billsController.getBillsLayout)
-
-
+router.put("/billsMarkComplete", ensureAuth, billsController.putMarkComplete)
+router.put("/billsMarkComplete", ensureAuth, billsController.putMarkUncomplete)
 module.exports = router;
