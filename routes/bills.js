@@ -13,4 +13,5 @@ router.post("/billsCreate", ensureAuth, billsController.postBillsCreate);
 router.get("/billsLayout", ensureAuth, billsController.getBillsLayout)
 router.put("/billsMarkComplete", ensureAuth, billsController.putMarkComplete)
 router.put("/billsMarkComplete", ensureAuth, billsController.putMarkUncomplete)
+router.delete("/billDelete/:id", ensureAuth, billsController.deleteBill);
 module.exports = router;

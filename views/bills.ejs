@@ -1,6 +1,9 @@
 <%- include('partials/header') -%>
 <div class="container">
-
+<!--I can create a carousel of calendars stacked up on top of each other
+    Have a sectiof for z-index in database (ie 4) create a class for z index 
+    on each calendar and cycle through in ejs with for-loop 
+  -->
 <%if(bills.length < 1){%>
   <div>
     <h2>You Do Not Have Any Bills Yet</h2>
@@ -20,14 +23,17 @@
           <th>Price</th>
           <th>Date Due</th>
           <th>Date Paid</th>
-          <th>Extra Info</th>
+          <th>Amount Paid</th>
           <th>Est. Balance Remaining</th>
+          <th>Extra Info</th>
+          
         </tr>
         <tr>
-          <td>Rent</td>
+          <th>Rent</th>
           <td>$<%=bills[i].Rent[0]%></td>
           <td><%=bills[i].Rent[1]%></td>
           <td><%=bills[i].Rent[2]%></td>
+          <td>Amount Paid</td>
           <td>$<%=bills[i].Rent[3]%></td>
           <td>"<%=bills[i].Rent[4]%>"</td>
         </tr>
@@ -36,104 +42,127 @@
           <td>$<%=bills[i].OGE[0]%></td>
           <td><%=bills[i].OGE[1]%></td>
           <td><%=bills[i].OGE[2]%></td>
+          <td>Amount Paid</td>
           <td>$<%=bills[i].OGE[3]%></td>
           <td>"<%=bills[i].OGE[4]%>"</td>
         </tr>
         <tr>
           <td>Storage</td>
-          <td><%=bills[i].Storage[0]%></td>
+          <td>$<%=bills[i].Storage[0]%></td>
           <td><%=bills[i].Storage[1]%></td>
           <td><%=bills[i].Storage[2]%></td>
-          <td><%=bills[i].Storage[3]%></td>
-          <td><%=bills[i].Storage[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Storage[3]%></td>
+          <td>"<%=bills[i].Storage[4]%>"</td>
         </tr>
         <tr>
           <td>Phone</td>
-          <td><%=bills[i].Phone[0]%></td>
+          <td>$<%=bills[i].Phone[0]%></td>
           <td><%=bills[i].Phone[1]%></td>
           <td><%=bills[i].Phone[2]%></td>
-          <td><%=bills[i].Phone[3]%></td>
-          <td><%=bills[i].Phone[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Phone[3]%></td>
+          <td>"<%=bills[i].Phone[4]%>"</td>
         </tr>
         <tr>
           <td>Insurance</td>
-          <td><%=bills[i].Insurance[0]%></td>
+          <td>$<%=bills[i].Insurance[0]%></td>
           <td><%=bills[i].Insurance[1]%></td>
           <td><%=bills[i].Insurance[2]%></td>
-          <td><%=bills[i].Insurance[3]%></td>
-          <td><%=bills[i].Insurance[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Insurance[3]%></td>
+          <td>"<%=bills[i].Insurance[4]%>"</td>
         </tr>
         <tr>
           <td>Water</td>
-          <td><%=bills[i].Water[0]%></td>
+          <td>$<%=bills[i].Water[0]%></td>
           <td><%=bills[i].Water[1]%></td>
           <td><%=bills[i].Water[2]%></td>
-          <td><%=bills[i].Water[3]%></td>
-          <td><%=bills[i].Water[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Water[3]%></td>
+          <td>"<%=bills[i].Water[4]%>"</td>
         </tr>
         <tr>
           <td>Windstream</td>
-          <td><%=bills[i].Windstream[0]%></td>
+          <td>$<%=bills[i].Windstream[0]%></td>
           <td><%=bills[i].Windstream[1]%></td>
           <td><%=bills[i].Windstream[2]%></td>
-          <td><%=bills[i].Windstream[3]%></td>
-          <td><%=bills[i].Windstream[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Windstream[3]%></td>
+          <td>"<%=bills[i].Windstream[4]%>"</td>
         </tr>
         <tr>
           <td>Car</td>
-          <td><%=bills[i].Car[0]%></td>
+          <td>$<%=bills[i].Car[0]%></td>
           <td><%=bills[i].Car[1]%></td>
           <td><%=bills[i].Car[2]%></td>
-          <td><%=bills[i].Car[3]%></td>
-          <td><%=bills[i].Car[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Car[3]%></td>
+          <td>"<%=bills[i].Car[4]%>"</td>
         </tr>
         <tr>
           <td>USAA</td>
-          <td><%=bills[i].USAA[0]%></td>
+          <td>$<%=bills[i].USAA[0]%></td>
           <td><%=bills[i].USAA[1]%></td>
           <td><%=bills[i].USAA[2]%></td>
-          <td><%=bills[i].USAA[3]%></td>
-          <td><%=bills[i].USAA[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].USAA[3]%></td>
+          <td>"<%=bills[i].USAA[4]%>"</td>
         </tr>
         <tr>
           <td>Academy</td>
-          <td><%=bills[i].Academy[0]%></td>
+          <td>$<%=bills[i].Academy[0]%></td>
           <td><%=bills[i].Academy[1]%></td>
           <td><%=bills[i].Academy[2]%></td>
-          <td><%=bills[i].Academy[3]%></td>
-          <td><%=bills[i].Academy[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Academy[3]%></td>
+          <td>"<%=bills[i].Academy[4]%>"</td>
         </tr>
         <tr>
           <td>Capital One</td>
-          <td><%=bills[i].CapitalOne[0]%></td>
+          <td>$<%=bills[i].CapitalOne[0]%></td>
           <td><%=bills[i].CapitalOne[1]%></td>
           <td><%=bills[i].CapitalOne[2]%></td>
-          <td><%=bills[i].CapitalOne[3]%></td>
-          <td><%=bills[i].CapitalOne[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].CapitalOne[3]%></td>
+          <td>"<%=bills[i].CapitalOne[4]%>"</td>
         </tr>
         <tr>
           <td>Milestone</td>
-          <td><%=bills[i].Milestone[0]%></td>
+          <td>$<%=bills[i].Milestone[0]%></td>
           <td><%=bills[i].Milestone[1]%></td>
           <td><%=bills[i].Milestone[2]%></td>
-          <td><%=bills[i].Milestone[3]%></td>
-          <td><%=bills[i].Milestone[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Milestone[3]%></td>
+          <td>"<%=bills[i].Milestone[4]%>"</td>
         </tr>
         <tr>
           <td>Indigo</td>
-          <td><%=bills[i].Indigo[0]%></td>
+          <td>$<%=bills[i].Indigo[0]%></td>
           <td><%=bills[i].Indigo[1]%></td>
           <td><%=bills[i].Indigo[2]%></td>
-          <td><%=bills[i].Indigo[3]%></td>
-          <td><%=bills[i].Indigo[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Indigo[3]%></td>
+          <td>"<%=bills[i].Indigo[4]%>"</td>
         </tr>
         <tr>
           <td>Lowes</td>
-          <td><%=bills[i].Lowes[0]%></td>
+          <td>$<%=bills[i].Lowes[0]%></td>
           <td><%=bills[i].Lowes[1]%></td>
           <td><%=bills[i].Lowes[2]%></td>
-          <td><%=bills[i].Lowes[3]%></td>
-          <td><%=bills[i].Lowes[4]%></td>
+          <td>Amount Paid</td>
+          <td>$<%=bills[i].Lowes[3]%></td>
+          <td>"<%=bills[i].Lowes[4]%>"</td>
+        </tr>
+
+        <tr>
+          <th>Total</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Amount Paid</td>
+          <td></td>
+          <td></td>
         </tr>
         </table>
     
@@ -142,4 +171,24 @@
 
       <% } %>
    <% } %>
+
+   <div class="col-6">
+    <form action="/bills/billsCreate" method="POST">
+    <div class="row justify-content-center mt-5">
+      <button class="btn btn-primary">Create Bill Table</button>
+    </div>
+  </form>
+    <!--<div class="row justify-content-center mt-5">
+      <a class="btn btn-primary" href="/bills/allBills">View Bill Table</a>
+    </div>  -->
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary" href="/bills/billsLayout">Edit Bills</a>
+    </div>  
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary" href="/bills/billsList">View Bill List</a>
+    </div> 
+    <div class="row justify-content-center mt-5">
+      <a class="btn btn-primary" href="/profile">Profile/Home</a>
+    </div> 
+  </div>  
 </div>

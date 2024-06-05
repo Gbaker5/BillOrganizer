@@ -28,20 +28,21 @@ module.exports = {
       await Bills.create({
         user: req.user.id,
         Month:'',
-        Rent: ['','','','',''],
-        OGE: ['','','','',''],
-        Storage: ['','','','',''],
-        Phone: ['','','','',''],
-        Insurance: ['','','','',''],
-        Water: ['','','','',''],
-        Windstream: ['','','','',''],
-        Car: ['','','','',''],
-        USAA: ['','','','',''],
-        Academy: ['','','','',''],
-        CaptalOne: ['','','','',''],
-        Milestone: ['','','','',''],
-        Indigo: ['','','','',''],
-        Lowes: ['','','','',''],
+        Rent: ['','','','','',''],
+        OGE: ['','','','','',''],
+        Storage: ['','','','','',''],
+        Phone: ['','','','','',''],
+        Insurance: ['','','','','',''],
+        Water: ['','','','','',''],
+        Windstream: ['','','','','',''],
+        Car: ['','','','','',''],
+        USAA: ['','','','','',''],
+        Academy: ['','','','','',''],
+        CaptalOne: ['','','','','',''],
+        Milestone: ['','','','','',''],
+        Indigo: ['','','','','',''],
+        Lowes: ['','','','','',''],
+        Total:['',''] //total for bill amounts and amount paid
     })
 
 
@@ -299,6 +300,13 @@ module.exports = {
 
       
       res.redirect(`bills/billsEdit/${req.params.id}`)
+    }catch (err) {
+      console.log(err);
+    }
+  },
+  deleteBill: async (req,res) => {
+    try{
+      res.redirect("/bills/allBills")
     }catch (err) {
       console.log(err);
     }
